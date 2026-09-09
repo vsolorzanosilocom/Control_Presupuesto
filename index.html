@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Silocom, C.A. - Control de Presupuestos</title>
+    <meta name="description" content="Sistema corporativo de gestión y control de presupuestos para Silocom, C.A." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+      @media print {
+        body {
+          background: white !important;
+          color: black !important;
+          padding: 0 !important;
+          margin: 0 !important;
+        }
+        header, footer, nav, button, .print\:hidden {
+          display: none !important;
+        }
+        #official-preview-modal-doc, #official-printable-document {
+          box-shadow: none !important;
+          border: none !important;
+          margin: 0 !important;
+          padding: 0 !important;
+          width: 100% !important;
+          max-width: 100% !important;
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-slate-100 antialiased text-slate-900 selection:bg-cyan-500 selection:text-slate-950 font-sans">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
