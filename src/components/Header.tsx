@@ -14,6 +14,7 @@ import {
   Receipt
 } from 'lucide-react';
 import { AppConfig } from '../types';
+import { SilocomLogo } from './SilocomLogo';
 
 interface HeaderProps {
   activeTab: 'generator' | 'history' | 'approval' | 'facturas' | 'settings';
@@ -43,41 +44,27 @@ export const Header: React.FC<HeaderProps> = ({
           
           {/* Brand & Corporate Logo */}
           <div className="flex items-center gap-3.5">
-            <div className="relative group cursor-pointer flex items-center justify-center" onClick={() => setActiveTab('generator')}>
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-tr from-blue-700 via-indigo-600 to-cyan-400 p-[2px] shadow-lg shadow-blue-500/20 group-hover:shadow-blue-500/40 transition-all duration-300">
-                <div className="w-full h-full bg-slate-950 rounded-[10px] flex items-center justify-center">
-                  {/* Stylized Silocom Logo Icon */}
-                  <svg className="w-7 h-7 text-cyan-400" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M20 6L32 13V27L20 34L8 27V13L20 6Z" stroke="url(#silocom_grad)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-                    <circle cx="20" cy="20" r="4.5" fill="#38BDF8" />
-                    <path d="M20 6V15.5M32 13L24 17.5M32 27L24 22.5M20 34V24.5M8 27L16 22.5M8 13L16 17.5" stroke="#38BDF8" strokeWidth="1.8" strokeLinecap="round"/>
-                    <defs>
-                      <linearGradient id="silocom_grad" x1="8" y1="6" x2="32" y2="34" gradientUnits="userSpaceOnUse">
-                        <stop stopColor="#38BDF8"/>
-                        <stop offset="0.5" stopColor="#6366F1"/>
-                        <stop offset="1" stopColor="#0EA5E9"/>
-                      </linearGradient>
-                    </defs>
-                  </svg>
-                </div>
-              </div>
+            <div 
+              className="cursor-pointer transition-transform hover:scale-[1.02]" 
+              onClick={() => setActiveTab('generator')}
+              title="Ir al Generador de Presupuestos"
+            >
+              <SilocomLogo size="sm" showRif={true} variant="badge" />
             </div>
 
-            <div>
+            <div className="hidden sm:block border-l border-slate-700/80 pl-3">
               <div className="flex items-center gap-2">
-                <span className="text-xl font-black tracking-wider text-white font-sans">
-                  SILOCOM<span className="text-cyan-400">, C.A.</span>
-                </span>
-                <span className="text-[10px] font-semibold uppercase tracking-widest px-2 py-0.5 rounded-full bg-cyan-950 text-cyan-300 border border-cyan-800/60">
+                <span className="text-sm font-bold text-white tracking-wide">
                   Gestión Corporativa
                 </span>
+                <span className="text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full bg-cyan-950 text-cyan-300 border border-cyan-800/60">
+                  Presupuestos
+                </span>
               </div>
-              <div className="flex items-center gap-2 text-xs text-slate-400 mt-0.5">
-                <span className="font-mono text-slate-300 font-semibold">{config.rifEmpresa}</span>
-                <span className="text-slate-600">•</span>
-                <span className="hidden sm:inline text-slate-400 truncate max-w-xs">{config.telefonoEmpresa}</span>
+              <div className="flex items-center gap-2 text-xs text-slate-400 mt-1">
+                <span className="text-slate-400 truncate max-w-xs">{config.telefonoEmpresa}</span>
                 <span className="hidden md:inline text-slate-600">•</span>
-                <span className="hidden md:inline text-cyan-400/90 font-medium">Control de Presupuestos</span>
+                <span className="hidden md:inline text-cyan-400 font-medium">Control Comercial</span>
               </div>
             </div>
           </div>
